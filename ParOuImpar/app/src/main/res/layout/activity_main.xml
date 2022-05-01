@@ -23,7 +23,7 @@
         android:autofillHints="" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnVerificar"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginTop="80dp"
