@@ -19,12 +19,22 @@ public class MainActivity extends AppCompatActivity {
         edtNum = findViewById(R.id.edtNum);
         btnVerificar = findViewById(R.id.btnVerificar);
 
-        String num = (edtNum.getText().toString());
-
         btnVerificar.setOnClickListener(View -> {
-            if (num.length() == 0) {
+
+            if (edtNum.getText().length() == 0) {
                 Toast.makeText(this, "Caixa de texto vazia!", Toast.LENGTH_SHORT).show();
                 Toast.makeText(this, "Preencha corretamente!", Toast.LENGTH_SHORT).show();
+            } else {
+                int num = Integer.parseInt(edtNum.getText().toString());
+                String msg;
+
+                if (num % 2 == 0) {
+                    msg = String.format("O número %s é PAR!", num);
+                } else {
+                    msg = String.format("O número %s é ÍMPAR!", num);
+                }
+
+                Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
             }
         });
     }
